@@ -1,7 +1,14 @@
 import { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { Button, Layout, Input, Form } from "antd";
+import { Route, Routes } from "react-router-dom";
+import Lab1 from "./pages/Lab1";
 
+// const { Header, Content, Footer } = Layout;
 function App() {
+  // const onFinish = (values: any) => {
+  //   console.log(values);
+  // };
   return (
     <>
       <nav className="bg-blue-600 text-white shadow">
@@ -11,7 +18,7 @@ function App() {
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="#" className="hover:text-gray-200">
+            <Link to="/" className="hover:text-gray-200">
               Trang chủ
             </Link>
             <Link to="/list" className="hover:text-gray-200">
@@ -35,7 +42,48 @@ function App() {
 
       {/* MAIN CONTENT */}
       <div className="max-w-6xl mx-auto mt-10 px-4 text-center">
-        <h1 className="text-4xl font-bold mb-4">Chào mừng đến với WEB2091</h1>
+        <div className="mb-2">
+          <Link to="/lab1">
+            <Button className="mr-1" type="primary">Lab1</Button>
+          </Link>
+
+          <Link to="/lab2">
+            <Button className="mr-1" type="default">Lab2</Button>
+          </Link>
+
+          <Link to="/lab3">
+            <Button className="mr-1" type="dashed">Lab3</Button>
+          </Link>
+
+          <Link to="/lab4">
+            <Button className="mr-1" type="link">Lab4</Button>
+          </Link>
+
+          <Link to="/lab5">
+            <Button type="text">Lab5</Button>
+          </Link>
+        </div>
+
+        {/* <Layout className="mt-2">
+          <Header style={{ color: "white" }}>Header</Header>
+          <Content style={{ padding: 20 }}>
+          <Form onFinish={onFinish}>
+              <Form.Item label="Username" name="username">
+                <Input />
+              </Form.Item>
+              <Form.Item>
+                <Button htmlType="submit" type="primary">
+                  Submit
+                </Button>
+              </Form.Item>
+            </Form>
+          </Content>
+          <Footer>Footer</Footer>
+        </Layout> */}
+
+        <Routes>
+          <Route path="/lab1" element={<Lab1/>}></Route>
+        </Routes>
       </div>
 
       <Toaster />
