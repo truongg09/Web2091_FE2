@@ -32,7 +32,6 @@ function Lab1() {
   return (
     <Layout style={{ minHeight: "70vh" }}>
 
-      {/* Sidebar */}
       <Sider>
         <div className="mt-4">
             <Menu
@@ -48,12 +47,10 @@ function Lab1() {
 
       <Layout>
 
-        {/* Header */}
         <Header style={{ color: "white", fontSize: 20, background: "#1677ff"  }}>
           Quản lý tài khoản
         </Header>
 
-        {/* Content */}
         <Content style={{ padding: 20}}>
 
             <div className="flex justify-end mb-5">
@@ -64,7 +61,6 @@ function Lab1() {
 
           <Table columns={columns} dataSource={users} />
 
-          {/* Modal */}
           <Modal
             title="Add User"
             open={open}
