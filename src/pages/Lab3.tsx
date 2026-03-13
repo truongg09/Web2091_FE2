@@ -1,4 +1,4 @@
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, Select } from "antd";
 import { useState } from "react";
 
 function Bai1(){
@@ -146,6 +146,21 @@ function Bai4() {
         <Form.Item
           label="Ảnh bìa" name="image">
           <Input />
+        </Form.Item>
+
+        <Form.Item
+          label="Danh mục" name="category">
+          <Select
+          options={[
+            {
+                value: "1",
+                label: "Cuộc sống"
+            },
+            {
+                value: "2",
+                label: "Thời trang"
+            },
+          ]}/>
         </Form.Item>
   
         <Form.Item>
