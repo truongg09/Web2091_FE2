@@ -1,4 +1,5 @@
 import { Form, Input, Button } from "antd";
+import { useState } from "react";
 
 function Bai1(){
   const onFinish = (values: any) => {
@@ -6,7 +7,7 @@ function Bai1(){
   };
 
   return (
-    <Form layout="vertical" onFinish={onFinish} style={{ maxWidth: 400 }}>
+    <Form layout="vertical" onFinish={onFinish} style={{ maxWidth: 500 }}>
       <Form.Item 
       label="Email" 
       name="email"
@@ -118,6 +119,43 @@ function Bai3() {
       </Form>
     );
 };
+function Bai4() {
+    const [blog, setBlog] = useState<any>(null);
+    const onFinish = (values: any) => {
+      setBlog(values);
+    };
+  
+    return (
+      <Form layout="vertical" onFinish={onFinish} style={{ maxWidth: 500 }}>
+        {JSON.stringify(blog)}
+        <Form.Item
+          label="Tên sản bài viết" name="title">
+          <Input />
+        </Form.Item>
+  
+        <Form.Item
+          label="Tác giả" name="slug">
+          <Input />
+        </Form.Item>
+
+        <Form.Item
+          label="Nội dung" name="content">
+          <Input />
+        </Form.Item>
+
+        <Form.Item
+          label="Ảnh bìa" name="image">
+          <Input />
+        </Form.Item>
+  
+        <Form.Item>
+          <Button type="primary" htmlType="submit">
+            Đăng bài
+          </Button>
+        </Form.Item>
+      </Form>
+    );
+};
 
 function Lab3() {
     return (
@@ -133,6 +171,10 @@ function Lab3() {
         <div>
           <h1 className="text-left font-bold">Bài 3</h1>
           <Bai3 />
+        </div>
+        <div>
+          <h1 className="text-left font-bold">Bài 4</h1>
+          <Bai4 />
         </div>
       </div>
     );
