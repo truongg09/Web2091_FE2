@@ -1,4 +1,27 @@
 {
+  "stories": [
+    {
+      "title": "One Piece",
+      "author": "Oda Eiichiro",
+      "image": "https://nipponclass.jp/wp-content/uploads/2024/07/MV5BM2YwYTkwNjItNGQzNy00MWE1LWE1M2ItOTMzOGI1OWQyYjA0XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_FMjpg_UX1000_-723x1024.jpg",
+      "description": "Good",
+      "id": 1
+    }
+  ],
   "products": [],
-  "users": []
+  "users": [],
+  "categories": [
+    {
+      "title": "Trinh thám",
+      "description": "Good",
+      "active": "1",
+      "id": 2
+    },
+    {
+      "title": "Hành động",
+      "description": "Good",
+      "active": "2",
+      "id": 3
+    }
+  ]
 }

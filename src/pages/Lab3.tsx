@@ -1,4 +1,5 @@
 import { Form, Input, Button, Select } from "antd";
+import Password from "antd/es/input/Password";
 import { useState } from "react";
 
 function Bai1(){
@@ -70,7 +71,7 @@ function Bai2() {
           <Input.Password />
         </Form.Item>
 
-        <Form.Item label="Nhập lại mật khẩu" name="confirmPass" 
+        <Form.Item label="Nhập lại mật khẩu" name="confirmPass" dependencies={[Password]}
         rules={[{ required: true, message: "Vui lòng nhập lại mật khẩu"}]}>
           <Input.Password />
         </Form.Item>
