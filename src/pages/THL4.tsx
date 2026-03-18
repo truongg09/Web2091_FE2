@@ -1,9 +1,9 @@
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, DatePicker } from "antd";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const Lab4 = () => {
+const THL4 = () => {
   const {mutate, isSuccess, isPending} = useMutation({
     mutationFn: async (data: any) => {
       const res = await axios.post("http://localhost:3000/stories", data);
@@ -22,7 +22,10 @@ const Lab4 = () => {
 
   const onFinish = (values: any) => {
     console.log("Success:", values);
-    mutate(values);
+    mutate({
+      ...values,
+      createdAt: new Date().toISOString(),
+    });
   };
 
   return (
@@ -47,6 +50,10 @@ const Lab4 = () => {
         <Input.TextArea rows={4} />
       </Form.Item>
 
+      <Form.Item label="Ngày thêm" name="createdAt">
+        <DatePicker format="DD/MM/YYYY" style={{ width: "100%" }} />
+      </Form.Item>
+
       <Button type="primary" htmlType="submit" loading={isPending}>
         Thêm truyện
       </Button>
@@ -55,4 +62,4 @@ const Lab4 = () => {
   );
 };
 
-export default Lab4;
+export default THL4;

@@ -5,7 +5,32 @@
       "author": "Oda Eiichiro",
       "image": "https://nipponclass.jp/wp-content/uploads/2024/07/MV5BM2YwYTkwNjItNGQzNy00MWE1LWE1M2ItOTMzOGI1OWQyYjA0XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_FMjpg_UX1000_-723x1024.jpg",
       "description": "Good",
-      "id": 1
+      "createdAt": "2026-03-18T08:08:56.570Z",
+      "id": 2
+    },
+    {
+      "title": "Naruto",
+      "author": "Kishimoto Masashi",
+      "image": "https://upload.wikimedia.org/wikipedia/vi/4/42/First_naruto_shounen_jump.png",
+      "description": "Truyện lấy bối cảnh bắt nguồn từ sự việc xảy ra vào mười hai năm trước, con Hồ Ly Chín Đuôi (Kyuubi-Kurama[2]) đã tấn công Làng Lá (木ノ葉隠れ (Mộc Diệp Ẩn Lý) Konohagakure / Konohagakure no Sato?).",
+      "createdAt": "2026-03-18T08:26:50.660Z",
+      "id": 3
+    },
+    {
+      "title": "Dragon Ball",
+      "author": "Toriyama Akira",
+      "image": "https://upload.wikimedia.org/wikipedia/vi/3/39/First_dragon_ball_shounen_jump.jpg",
+      "description": "Dragon Ball là bộ truyện nổi tiếng và phổ biến rộng rãi bậc nhất trên toàn thế giới, là một trong những bộ manga được tiêu thụ nhiều nhất mọi thời đại. Nó được bán ở hơn 40 quốc gia và phiên bản anime cũng được phát sóng ở hơn 80 quốc gia. 42 tập tankōbon được sưu tầm của manga đã bán được hơn 160 triệu bản ở Nhật Bản và 260 triệu bản được bán trên toàn thế giới tính đến năm 2019[7] Nó đã có tác động đáng kể đến văn hóa đại chúng toàn cầu, được tham khảo và truyền cảm hứng cho nhiều nghệ sĩ, vận động viên, người nổi tiếng, nhà làm phim, nhạc sĩ và nhà văn trên khắp thế giới.",
+      "createdAt": "2026-03-18T08:31:43.577Z",
+      "id": 4
+    },
+    {
+      "title": "Thám tử lừng danh Conan",
+      "author": "Toriyama Akira",
+      "image": "https://upload.wikimedia.org/wikipedia/vi/6/63/Nhan_vat_Tham_tu_lung_danh_Conan.jpg",
+      "description": "Good",
+      "createdAt": "2026-03-18T08:54:14.459Z",
+      "id": 5
     }
   ],
   "products": [],
