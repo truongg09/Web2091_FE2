@@ -9,6 +9,7 @@ import Lab4 from "./pages/Lab4";
 import StoryList from "./pages/THL5";
 import Lab5 from "./pages/Lab5";
 import THL4 from "./pages/THL4";
+import Lab6 from "./pages/Lab6";
 
 // const { Header, Content, Footer } = Layout;
 function App() {
@@ -76,6 +77,10 @@ function App() {
           <Link to="/thl5">
             <Button type="text">Lab5 TH</Button>
           </Link>
+
+          <Link to="/lab6">
+            <Button type="text">Lab6</Button>
+          </Link>
         </div>
 
         {/* <Layout className="mt-2">
@@ -103,6 +108,7 @@ function App() {
           <Route path="/thl4" element={<THL4/>}></Route>
           <Route path="/thl5" element={<StoryList/>}></Route>
           <Route path="/lab5" element={<Lab5/>}></Route>
+          <Route path="/lab6" element={<Lab6/>}></Route>
         </Routes>
       </div>
 
