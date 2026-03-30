@@ -1,6 +1,6 @@
 import { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
-import { Button} from "antd";
+import { Button, ConfigProvider} from "antd";
 import { Route, Routes } from "react-router-dom";
 import Lab1 from "./pages/Lab1";
 import Lab2 from "./pages/Lab2";
@@ -11,15 +11,28 @@ import Lab5 from "./pages/Lab5";
 import THL4 from "./pages/THL4";
 import Lab6 from "./pages/Lab6";
 import Navbar from "./compopnents/Header";
+import {theme as antdTheme } from "antd";
+import { ThemeContext } from "./context/ThemeContext";
+import { useContext } from "react";
 
 // const { Header, Content, Footer } = Layout;
 function App() {
   // const onFinish = (values: any) => {
   //   console.log(values);
   // };
+  const context = useContext(ThemeContext);
+  if (!context) return null;
+  const { theme } = context;
   return (
     <>
-    <Navbar/>
+      <ConfigProvider
+      theme={{
+        algorithm:
+          theme === "dark"
+            ? antdTheme.darkAlgorithm
+            : antdTheme.defaultAlgorithm,
+      }}>
+      <Navbar/>
       {/* MAIN CONTENT */}
       <div className="max-w-6xl mx-auto mt-10 px-4 text-center">
         <div className="mb-2">
@@ -86,6 +99,7 @@ function App() {
       </div>
 
       <Toaster />
+      </ConfigProvider>
     </>
   );
 }
