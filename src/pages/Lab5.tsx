@@ -3,6 +3,7 @@ import { Image, Table, Button, Popconfirm, Input } from "antd";
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 function Lab5(){
     const [search, setSearch] = useState("");
@@ -47,16 +48,22 @@ function Lab5(){
         {
             title: "Action",
             render: (_: any, record: any) => (
-              <Popconfirm
-                title="Xóa truyện"
-                description="Bạn có chắc chắn muốn xóa không?"
-                okText="Có"
-                cancelText="Không"
-                onConfirm={() => mutate(record.id)}
-              >
-                <Button danger>DEL</Button>
-              </Popconfirm>
+              <>
+                <Popconfirm
+                  title="Xóa truyện"
+                  description="Bạn có chắc chắn muốn xóa không?"
+                  okText="Có"
+                  cancelText="Không"
+                  onConfirm={() => mutate(record.id)}
+                >
+                  <Button danger>DEL</Button>
+                </Popconfirm>
+                <Button type="primary">
+                  <Link to={`/edit/${record.id}`}>Edit</Link>
+                </Button>
+              </>
             ),
+            
           },
     ];
     
@@ -68,10 +75,10 @@ function Lab5(){
         return <div>Có lỗi xảy ra</div>;
     }
     return(
-        <>
+      <>
         <Input placeholder="Tìm theo tên truyện..." onChange={(e) => setSearch(e.target.value)} style={{display:"flex",marginBottom:16, maxWidth: 200}}/>
         <Table columns={columns} dataSource={filteredData} loading={isLoading} pagination={{pageSize:5}}/>
-        </>
+      </>
     );
 }
 
