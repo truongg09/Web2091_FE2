@@ -34,7 +34,23 @@
     }
   ],
   "products": [],
-  "users": [],
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$3cvf5QEZ67nFSzYpYScBiOcyghM9w/Y.2HoZs/9ZJC6qccHPv62Cq",
+      "id": 1
+    },
+    {
+      "email": "truongconn09@gmail.com",
+      "password": "$2a$10$Muj6pwHrDGamI61lnr0uzeoH7OPiygEzeM0x2wPu91B40wbS4CEpG",
+      "id": 2
+    },
+    {
+      "email": "truong@gmail.com",
+      "password": "$2a$10$WyHneAcYdIDtqBOieSglSOu1OJH3Gf9LZcprS9Ue3yg3Xv27Lr78e",
+      "id": 3
+    }
+  ],
   "categories": [
     {
       "title": "Trinh thám",

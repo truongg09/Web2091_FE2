@@ -14,6 +14,8 @@ import Navbar from "./compopnents/Header";
 import {theme as antdTheme } from "antd";
 import { ThemeContext } from "./context/ThemeContext";
 import { useContext } from "react";
+import Login from "./pages/login";
+import Register from "./pages/register";
 
 // const { Header, Content, Footer } = Layout;
 function App() {
@@ -95,6 +97,8 @@ function App() {
           <Route path="/thl5" element={<StoryList/>}></Route>
           <Route path="/lab5" element={<Lab5/>}></Route>
           <Route path="/lab6" element={<Lab6/>}></Route>
+          <Route path="/login" element={<Login/>}></Route>
+          <Route path="/register" element={<Register/>}></Route>
         </Routes>
       </div>
 
