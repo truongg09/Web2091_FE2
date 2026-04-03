@@ -1,19 +1,14 @@
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Image, Table, Button, Popconfirm, Input } from "antd";
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { useStoryList } from "../hooks/useStoryList";
 
 function Lab5(){
     const [search, setSearch] = useState("");
-    const { data, isLoading, isError } = useQuery({
-        queryKey: ["getAllStories"],
-        queryFn: async () => {
-          const res = await axios.get("http://localhost:3000/stories");
-          return res.data;
-        },
-    });
+    const {data, isLoading, isError} = useStoryList()
 
     const qc = useQueryClient();
 

@@ -1,16 +1,14 @@
 import { Form, Input, Button, Spin, DatePicker } from "antd";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import toast from "react-hot-toast";
 import dayjs from "dayjs";
+import { useUpdateStory } from "../hooks/useUpdateStory";
 
 const Lab6 = () => {
   const [form] = Form.useForm();
   const { id } = useParams();
-  const navigate = useNavigate();
-  const queryClient = useQueryClient();
 
   const { data, isLoading } = useQuery({
     queryKey: ["story", id],
@@ -27,28 +25,19 @@ const Lab6 = () => {
         createdAt: data.createdAt ? dayjs(data.createdAt) : null,
       });
     }
-  }, [data]);
+  }, [data, form]);
 
-  const mutation = useMutation({
-    mutationFn: async (values: any) => {
-      return axios.patch(`http://localhost:3000/stories/${id}`, values);
-    },
-    onSuccess: () => {
-      toast.success("Cập nhật thành công");
-      queryClient.invalidateQueries({ queryKey: ["getAllStories"] });
-      navigate("/lab5");
-    },
-    onError: () => {
-      toast.error("Cập nhật thất bại");
-    },
-  });
+  const { mutate, isPending } = useUpdateStory();
 
   const onFinish = (values: any) => {
-    mutation.mutate({
-      ...values,
-      createdAt: values.createdAt
-        ? values.createdAt.toISOString()
-        : null,
+    mutate({
+      id,
+      data: {
+        ...values,
+        createdAt: values.createdAt
+          ? values.createdAt.toISOString()
+          : null,
+      },
     });
   };
 
@@ -60,18 +49,13 @@ const Lab6 = () => {
       layout="vertical"
       onFinish={onFinish}
       style={{ maxWidth: 500 }}
-      disabled={mutation.isPending}>
-      <Form.Item
-        name="title"
-        label="Tên truyện"
-        rules={[{ required: true, message: "Nhập tên truyện" }]}>
+      disabled={isPending}
+    >
+      <Form.Item name="title" label="Tên truyện" rules={[{ required: true }]}>
         <Input />
       </Form.Item>
 
-      <Form.Item
-        name="author"
-        label="Tác giả"
-        rules={[{ required: true, message: "Nhập tác giả" }]}>
+      <Form.Item name="author" label="Tác giả" rules={[{ required: true }]}>
         <Input />
       </Form.Item>
 
@@ -83,14 +67,11 @@ const Lab6 = () => {
         <Input.TextArea rows={4} />
       </Form.Item>
 
-      <Form.Item
-        label="Ngày thêm"
-        name="createdAt"
-        rules={[{ required: true, message: "Chọn ngày" }]}>
+      <Form.Item name="createdAt" label="Ngày thêm" rules={[{ required: true }]}>
         <DatePicker format="DD/MM/YYYY" style={{ width: "100%" }} />
       </Form.Item>
 
-      <Button type="primary" htmlType="submit" loading={mutation.isPending}>
+      <Button type="primary" htmlType="submit" loading={isPending}>
         Cập nhật
       </Button>
     </Form>
